@@ -8,7 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.thunderstone.idun.dev"
+        applicationId = "com.ts.launcher"
         minSdk = 30
         targetSdk = 34
         versionCode = 1
