@@ -62,6 +62,12 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="mitv.action.STR_BOOT_COMPLETED" />
+                <action android:name="mitv.intent.action.STARTAPPS_PRIORITY_HIGH_PENDING" />
+                <action android:name="mitv.intent.action.STARTAPPS_PRIORITY_MIDDLE_PENDING" />
+                <action android:name="mitv.intent.action.STARTAPPS_PRIORITY_NORMAL_PENDING" />
             </intent-filter>
         </receiver>
     </application>
