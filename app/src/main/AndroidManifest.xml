@@ -31,6 +31,11 @@
         </activity>
 
         <service
+            android:name=".BootJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
             android:name=".WatchdogService"
             android:exported="false"
             android:foregroundServiceType="specialUse">

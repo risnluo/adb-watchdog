@@ -15,6 +15,9 @@ object AdbWifiController {
     fun isEnabled(ctx: Context): Boolean =
         Settings.Global.getInt(ctx.contentResolver, KEY, 0) == 1
 
+    fun enable(ctx: Context): Boolean =
+        runCatching { Settings.Global.putInt(ctx.contentResolver, KEY, 1) }.isSuccess
+
     fun hasSecureSettingsPermission(ctx: Context): Boolean =
         ctx.checkSelfPermission(SECURE_SETTINGS_PERM) == PackageManager.PERMISSION_GRANTED
 

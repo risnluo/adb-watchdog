@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.enableSwitch.isChecked = prefs.getBoolean(WatchdogService.KEY_ENABLED, false)
         binding.enableSwitch.setOnCheckedChangeListener { _, on ->
             prefs.edit().putBoolean(WatchdogService.KEY_ENABLED, on).apply()
-            if (on) WatchdogService.start(this) else WatchdogService.stop(this)
+            if (on) { WatchdogService.start(this); BootJobService.schedule(this) } else { WatchdogService.stop(this); BootJobService.cancel(this) }
         }
 
         binding.btnAccessibility.setOnClickListener {

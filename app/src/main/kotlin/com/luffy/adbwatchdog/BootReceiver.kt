@@ -10,6 +10,7 @@ class BootReceiver : BroadcastReceiver() {
         val prefs = WatchdogService.prefs(context)
         if (prefs.getBoolean(WatchdogService.KEY_ENABLED, false)) {
             WatchdogService.start(context)
+            BootJobService.schedule(context)
         }
     }
 }

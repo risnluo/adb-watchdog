@@ -49,6 +49,11 @@ class WatchdogAccessibilityService : AccessibilityService() {
         val filter = IntentFilter(AdbWifiController.ACTION_RECOVER)
         registerReceiver(receiver, filter, Context.RECEIVER_NOT_EXPORTED)
         Log.i(TAG, "AccessibilityService connected")
+        if (WatchdogService.prefs(this).getBoolean(WatchdogService.KEY_ENABLED, false)) {
+            WatchdogService.start(this)
+            BootJobService.schedule(this)
+            if (!AdbWifiController.isEnabled(this)) triggerRecovery()
+        }
     }
 
     override fun onDestroy() {
