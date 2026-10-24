@@ -31,6 +31,15 @@
         </activity>
 
         <service
+            android:name=".AdbNotifyListener"
+            android:exported="true"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <service
             android:name=".BootJobService"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
