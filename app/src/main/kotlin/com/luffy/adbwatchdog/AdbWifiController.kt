@@ -9,7 +9,7 @@ import kotlinx.coroutines.delay
 
 object AdbWifiController {
     private const val TAG = "AdbWatchdog"
-    private const val KEY = "adb_wifi_enabled"
+    private const val KEY = "adb_enabled"
     private const val SECURE_SETTINGS_PERM = "android.permission.WRITE_SECURE_SETTINGS"
 
     fun isEnabled(ctx: Context): Boolean =
